@@ -3,47 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FocusFlow</title>
+  <title>LinguaLab</title>
+
   <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="container">
-    <h1>📚 FocusFlow</h1>
-    <p class="subtitle">Stay productive.</p>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
 
-    <!-- Todo List -->
-    <section class="card">
-      <h2>To-Do List</h2>
+<header class="navbar">
+  <h1>🌍 LinguaLab</h1>
 
-      <div class="task-input">
-        <input type="text" id="taskInput" placeholder="Add a task..." />
-        <button onclick="addTask()">Add</button>
+  <nav>
+    <a href="#languages">Languages</a>
+    <a href="#productivity">Productivity</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="glass hero-card fade-up">
+    <h2>Learn Rare Languages</h2>
+
+    <p>
+      Discover rare and endangered languages while
+      staying productive.
+    </p>
+
+    <button onclick="scrollToLanguages()">
+      Explore Languages
+    </button>
+  </div>
+</section>
+
+<section id="languages" class="section">
+  <div class="glass panel fade-up">
+    <h2>Language Explorer</h2>
+
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search languages..."
+    />
+
+    <div id="languageGrid" class="language-grid"></div>
+  </div>
+</section>
+
+<section id="productivity" class="section">
+
+  <div class="grid">
+
+    <div class="glass card fade-up">
+      <h2>Pomodoro Timer</h2>
+
+      <div id="timer" class="timer">
+        25:00
+      </div>
+
+      <div class="btn-row">
+        <button onclick="startTimer()">
+          Start
+        </button>
+
+        <button onclick="resetTimer()">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <div class="glass card fade-up">
+      <h2>Tasks</h2>
+
+      <div class="task-row">
+        <input
+          id="taskInput"
+          placeholder="Add task..."
+        />
+
+        <button onclick="addTask()">
+          Add
+        </button>
       </div>
 
       <ul id="taskList"></ul>
-    </section>
+    </div>
 
-    <!-- Pomodoro -->
-    <section class="card">
-      <h2>Pomodoro Timer</h2>
-
-      <div class="timer" id="timer">25:00</div>
-
-      <div class="buttons">
-        <button onclick="startTimer()">Start</button>
-        <button onclick="resetTimer()">Reset</button>
-      </div>
-    </section>
-
-    <!-- Streak -->
-    <section class="card">
+    <div class="glass card fade-up">
       <h2>Daily Streak 🔥</h2>
-      <p id="streakCount">0 Days</p>
-      <button onclick="increaseStreak()">Complete Day</button>
-    </section>
-  </div>
 
-  <script src="script.js"></script>
+      <h3 id="streakDisplay">
+        0 Days
+      </h3>
+
+      <button onclick="increaseStreak()">
+        Complete Day
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
