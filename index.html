@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FocusFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>📚 FocusFlow</h1>
+    <p class="subtitle">Stay productive.</p>
+
+    <!-- Todo List -->
+    <section class="card">
+      <h2>To-Do List</h2>
+
+      <div class="task-input">
+        <input type="text" id="taskInput" placeholder="Add a task..." />
+        <button onclick="addTask()">Add</button>
+      </div>
+
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- Pomodoro -->
+    <section class="card">
+      <h2>Pomodoro Timer</h2>
+
+      <div class="timer" id="timer">25:00</div>
+
+      <div class="buttons">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+    </section>
+
+    <!-- Streak -->
+    <section class="card">
+      <h2>Daily Streak 🔥</h2>
+      <p id="streakCount">0 Days</p>
+      <button onclick="increaseStreak()">Complete Day</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
